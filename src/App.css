@@ -1,0 +1,857 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(243, 241, 232);
+}
+.startPage {
+  position: relative;
+  height: 100vh;
+  background-image: url("./images/arenas/glad_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.startPage h1 {
+  font-family: "MedievalSharp", cursive;
+  letter-spacing: 3px;
+  color: #f4a261;
+  font-size: 6rem;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5), -4px 4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.startPage a {
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #2a2a2a;
+  background: #f1e3ce;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-family: "MedievalSharp", cursive;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.startPage a:hover {
+  background: #eedcc1;
+  color: #e76f51;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.startPage a:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.x {
+  height: 100px;
+}
+/*LUDUSPAGE*/
+.ludusPage {
+  background-image: url("./images/arenas/glad_bg.png");
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1036px) {
+  .ludusPage {
+    height: 100dvh;
+  }
+}
+.ludusPage .luduses {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .ludus {
+    border-radius: 5px;
+    width: 28%;
+    min-width: 300px;
+    max-width: 360px;
+    background-color: rgb(176, 87, 87);
+    margin: 10px;
+  }
+}
+.ludusPage .luduses img {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.ludus {
+  position: relative;
+}
+
+.ludusPage h1 {
+  margin: 8px;
+  font-size: 3em;
+  color: rgb(240, 221, 221);
+}
+.ludus h5,
+.ludusPage h1 {
+  padding: 5px;
+  font-family: "MedievalSharp", cursive;
+  letter-spacing: 1px;
+}
+.ludus h5,
+p {
+  margin-left: 18px;
+}
+.ludus p {
+  margin-bottom: 2px;
+  padding-right: 10px;
+}
+
+.ludus:hover {
+  cursor: pointer;
+}
+/*gladiator-pick*/
+.pickerMenu {
+  font-family: "MedievalSharp", cursive;
+  position: relative;
+  padding: 138px 0;
+  background: rgb(227, 196, 160);
+  background: linear-gradient(
+    86deg,
+    rgba(244, 232, 219, 0.674) 0%,
+    rgba(211, 157, 92, 0.636) 100%
+  );
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pickerMenu h1 {
+  position: absolute;
+  top: 20px;
+  font-family: "MedievalSharp", cursive;
+  letter-spacing: 2px;
+  font-size: 2.4rem;
+}
+.gladiator-pick-card {
+  box-shadow: rgba(184, 176, 176, 0.25) 0px 50px 100px -20px,
+    rgba(79, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 10px;
+  width: 282px;
+  margin: 10px;
+}
+.gladiator-pick-card img {
+  width: 280px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.gladiator-pick-card img:hover {
+  cursor: pointer;
+}
+.gladiator-pick-card svg {
+  color: rgb(121, 121, 0);
+  margin-bottom: 5px;
+}
+.gladiator-pick-card p {
+  margin-bottom: 2px;
+}
+.gladiator-pick-card button {
+  margin-bottom: 4px;
+  margin-right: 6px;
+  background: none;
+  border: 1px solid rgb(29, 15, 0);
+  border-radius: 5px;
+  letter-spacing: 1px;
+  padding: 0px 5px;
+}
+.gladiator-pick-card button:hover {
+  cursor: pointer;
+  background-color: rgb(218, 189, 156);
+}
+.gladiator-pick-card .gla-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 10px;
+}
+.picker-coins {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  font-size: 2rem;
+}
+.picker-coins svg {
+  margin-bottom: 10px;
+  color: rgb(121, 121, 0);
+}
+.picker-modal {
+  width: 430px !important;
+  margin: 20px 50%;
+  transform: translate(-50%, 0);
+}
+.confirmSelection {
+  background: none;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 2px 10px;
+  top: 80px;
+  font-size: 1.2rem;
+}
+.confirmSelection:hover {
+  background-color: rgb(221, 198, 172);
+  cursor: pointer;
+}
+.picker-warn {
+  position: absolute;
+  top: 120px;
+  color: red;
+  font-size: 0.85em;
+}
+/*Mainpage*/
+.mainPage {
+  background-color: rgb(243, 241, 232);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.tabInventory {
+  margin-top: 10px;
+  min-width: 800px;
+  text-align: center;
+}
+.nav-tabs {
+  display: flex !important;
+  justify-content: center;
+}
+
+.nav-item button {
+  margin: 0 20px;
+  color: black;
+}
+.houseInventory {
+  display: flex;
+  margin-right: 40px;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+.houseInventory img {
+  width: 360px;
+}
+.houseInventory h4 {
+  margin: 8px;
+  font-family: "MedievalSharp", cursive;
+}
+.houseInventory p {
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  padding: 5px;
+}
+.tabInventory img {
+  width: 180px;
+  border-radius: 10px;
+  margin: 5px;
+  flex: 1;
+  min-width: 220px;
+  margin: 10px;
+}
+.tabInventory img:hover {
+  cursor: pointer;
+}
+.mainPage-gladiators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.mainPage-gladiators p {
+  margin: 3px;
+  padding: 2px;
+}
+.mainPage-gladiators button {
+  border-radius: 5px;
+  background: none;
+  padding: 1px 5px;
+}
+.mainPage-gladiators a {
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+.mainPage-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+.itemCard-main {
+  float: left;
+}
+.itemCard-main img {
+  border-radius: 24px;
+}
+.main-toArena {
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 20px;
+  left: 55%;
+  text-decoration: none;
+  background-color: rgb(255, 140, 0);
+}
+/*gladiatorstyles*/
+.gladiator-infos-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+.style-left-panel {
+  margin: 60px 25px;
+  margin-right: 0px;
+}
+.style-left-panel p {
+  margin: 30px 20px;
+  margin-right: 0px;
+}
+
+.gl-types-head {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  padding: 3px 7px;
+  text-align: center;
+  border-radius: 10px;
+}
+.gl-types-head:hover {
+  cursor: pointer;
+}
+.style-right {
+  margin-left: 24px;
+  margin-top: 20px;
+  width: 70%;
+}
+.style-right img {
+  width: 36%;
+  float: left;
+  margin-right: 15px;
+}
+.style-right p {
+  letter-spacing: 1px;
+}
+.style-right h1 {
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  margin-bottom: 26px;
+  letter-spacing: 1px;
+}
+.gladiator-infos-page a {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  background-color: #e0e0e0;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+.gladiator-infos-page a svg {
+  margin-bottom: 5px;
+}
+/*prepare*/
+.preparePage {
+  position: relative;
+  background: rgb(255, 190, 133);
+  background: linear-gradient(
+    272deg,
+    rgb(249, 193, 144) 0%,
+    rgb(255, 242, 233) 100%
+  );
+  overflow-y: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.gladiator-prepare {
+  height: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 78%;
+}
+.gladiator-prepare-full {
+  margin: 10px 3px;
+  width: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gladiator-prepare-full .wp {
+  width: 28%;
+  height: 54%;
+  border: 1px solid black;
+}
+.gladiator-prepare-full .wp img {
+  width: 100%;
+  height: 233px;
+}
+.itemSelect-holder {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+.itemSelect-holder button {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.uneq-bt {
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-left: 7px;
+}
+
+.mr-h3 {
+  letter-spacing: 1px;
+  margin-left: 20px;
+  font-size: 2rem;
+}
+.gladiator-prepare img {
+  width: 56%;
+  border-radius: 12px;
+}
+.dfweapon-prepare {
+  background-image: url("./images/equipments/def_eq_holder.png");
+  background-position: center;
+  background-size: cover;
+}
+.atweapon-prepare {
+  background-image: url("./images/equipments/atk_eq_holder.png");
+  background-position: center;
+  background-size: cover;
+}
+.prepare-info {
+  letter-spacing: 1px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  color: rgb(226, 6, 6);
+  left: 20%;
+}
+.prepare-info p {
+  font-size: 14px;
+  color: black;
+}
+.market-prepare {
+  width: 450px;
+  padding: 70px 0px;
+}
+.market-prepare img {
+  width: 200px;
+}
+.market-card-cont,
+.market-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.market-card button,
+.market-items button,
+.m-but {
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(169, 169, 169);
+  background-color: rgb(223, 48, 17);
+  margin-top: 5px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.market-card button:disabled,
+.market-items button:disabled,
+.m-but:disabled {
+  opacity: 0.5;
+}
+.market-card,
+.market-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*ItemSelect*/
+.itemSelectPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* align-items: center; */
+  overflow-y: auto;
+}
+.itemSelectPage .prepare-itemselect-glad img {
+  width: 340px;
+  margin: 10px;
+  border-radius: 10px;
+  margin-right: 34px;
+}
+.itemSelectPage .prepare-itemSelect {
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+}
+.itemSelectPage .prepare-itemSelect img {
+  width: 210px;
+  margin: 8px;
+}
+.itemSelectPage .prepare-itemSelect img:hover {
+  cursor: pointer;
+}
+.itemSelect-info {
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-left: 50px;
+  font-weight: 620;
+  color: red;
+}
+.prep-go-stage {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  background: rgb(255, 35, 35);
+  background: linear-gradient(
+    75deg,
+    rgba(255, 35, 35, 1) 0%,
+    rgba(254, 110, 20, 1) 100%
+  );
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+.prep-go-stage svg {
+  margin-bottom: 4px;
+}
+/*STAGE*/
+.stagePage {
+  height: 100%;
+  width: 100%;
+}
+.stage-infos {
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 200px;
+  background-color: rgb(213, 182, 153);
+  letter-spacing: 1px;
+}
+.topl {
+  margin-right: 20px;
+}
+.topr {
+  margin-left: 20px;
+}
+.topm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fight-info {
+  font-size: 20px;
+  margin: 10px 0;
+  color: darkblue;
+}
+.stage-arena {
+  background-image: url("./images/arenas/stage_arena.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 82%;
+  display: flex;
+}
+
+.def-pos,
+.atk-pos {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.atk-pos .pos1 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  min-height: 20px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  border-radius: 10%;
+}
+.atk-pos .pos2 {
+  position: absolute;
+  right: 34%;
+  top: 8%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  border-radius: 10%;
+}
+.atk-pos .pos3 {
+  position: absolute;
+  right: 44%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  border-radius: 10%;
+}
+.pos1:hover,
+.pos2:hover,
+.pos3:hover {
+  cursor: pointer;
+}
+.pos1 img,
+.pos2 img,
+.pos3 img,
+.pos4 img,
+.pos5 img,
+.pos6 img {
+  width: 100%;
+  height: 320px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.pos4 img,
+.pos5 img,
+.pos6 img {
+  position: absolute;
+  left: 18%;
+  top: 66%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  border-radius: 10%;
+}
+.pos5 img {
+  left: 78%;
+}
+.pos6 img {
+  left: 48%;
+  top: 26%;
+}
+
+.pos1 .progress,
+.pos2 .progress,
+.pos3 .progress {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 102%;
+  width: 220px;
+}
+
+.pos4 .progress,
+.pos5 .progress,
+.pos6 .progress {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 18%;
+  top: 94%;
+  width: 220px;
+}
+.pos6 .progress {
+  left: 48%;
+  top: 54%;
+}
+.pos5 .progress {
+  left: 78%;
+}
+.deactive {
+  opacity: 0.6;
+}
+
+.fight-but {
+  letter-spacing: 2px;
+  top: 200px;
+  padding: 3px 18px;
+  border-radius: 20px;
+}
+.topl,
+.topr {
+  font-family: "MedievalSharp", cursive;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+/*stage-pick*/
+.placementPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.placementPage h4 {
+  letter-spacing: 2px;
+  margin: 20px;
+}
+.stage-g-pick {
+  display: flex;
+  flex-wrap: wrap;
+}
+.stage-gla-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stage-gla-img button {
+  width: 100px;
+  padding: 1px 3px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+.stage-g-pick img {
+  width: 300px;
+  border-radius: 20px;
+  margin: 15px;
+}
+.ac-item {
+  width: 160px;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+.ac-item:hover {
+  cursor: pointer;
+}
+.offcanvas {
+  height: 400px !important  ;
+  background-color: rgb(216, 200, 185) !important;
+}
+.offcanvas-body {
+  padding-top: 0 !important;
+}
+.infoArr-s {
+  background-color: white;
+  padding: 0px 10px;
+  margin-top: 3px;
+  border-radius: 10px;
+  color: rgb(46, 17, 17);
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.bl-bt {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  background-color: #ddc386;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+/*StageEndPage*/
+/*anim*/
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.stageEnd-page {
+  height: 100%;
+  width: 100%;
+  background-image: url("../src/images/arenas/so-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.se-w {
+  color: rgb(255, 255, 255);
+  padding: 10px 80px;
+  letter-spacing: 1px;
+  font-family: "MedievalSharp", cursive;
+  font-size: 22px;
+}
+.gbut {
+  font-family: "MedievalSharp", cursive;
+}
+.gover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gover p {
+  font-family: "MedievalSharp", cursive;
+  font-size: 160px;
+  color: #ff4444;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  animation: fadeIn1 1.5s ease-in-out;
+}
+
+.gover a {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.restart-button {
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-family: "MedievalSharp";
+  font-size: 28px;
+  padding: 5px 10px;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+  animation: fadeIn1 3.5s ease-in-out;
+}
+
+.restart-button:hover {
+  transform: scale(1.1);
+  background-color: #333333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
